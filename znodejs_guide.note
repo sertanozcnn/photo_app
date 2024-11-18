@@ -1,0 +1,91 @@
+// ana dosyaları public yap
+
+// html kısmını view yap
+
+//git repo oluştur komutlaru uygula
+
+// app.js dosyasını ekle
+
+/*import express from "express";
+
+const app = express();
+const port = 3000;
+
+//ejs template
+
+app.set("view engine", "ejs");
+
+//static files
+app.use(express.static("public"));
+
+app.get("/", (req, res) => {
+  res.render("index");
+});
+
+app.listen(port, () => {
+  console.log(`Application running at ${port}`);
+});*/
+
+/* 
+npm init 
+npm install express
+node app
+npm run
+npm install -D nodemon
+git rep commit
+npm i ejs
+npm start
+
+
+
+PACKAGE JSON
+
+{
+  "name": "photo_app",
+  "version": "1.0.0",
+  "description": "photo app project",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "Sertan Ozcan",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
+
+
+
+
+<%- include("partials/_header") %>
+
+header partialsa ayrıldı
+
+
+
+
+npm install dotenv
+
+ npm install dotenv mongoose
+
+ db js create
+
+
+ pageController.js created
+
+ 
+
+
+npm i bcrypt
+npm install jsonwebtoken
+npm i cookie-parser 
+npm i validator
+*/
+,
+
