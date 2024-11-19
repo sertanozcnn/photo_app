@@ -12,8 +12,6 @@ const createUser = async (req, res) => {
 
     res.redirect("/login");
   } catch (error) {
-  
-
     let errors2 = {};
 
     if (error.code === 11000) {
@@ -25,8 +23,6 @@ const createUser = async (req, res) => {
         errors2[key] = error.errors[key].message;
       });
     }
-
-   
 
     res.status(400).json(errors2);
   }
@@ -83,4 +79,40 @@ const createToken = (userId) => {
   });
 };
 
-export { createUser, loginUser, getDashboardPage };
+const getAllUsers = async (req, res) => {
+  try {
+    const users = await User.find({
+      _id: { $ne: res.locals.user._id },
+    });
+
+    res.status(200).render("users", {
+      users,
+      link: "users",
+    });
+  } catch (error) {
+    res.status(500).json({
+      succeeded: false,
+      error,
+    });
+  }
+};
+
+const getAUsers = async (req, res) => {
+  try {
+    const user = await User.findById(req.params.id);
+    const photos = await Photo.find({ user: req.params.id });
+
+    res.status(200).render("user", {
+      user,
+      photos,
+      link: "users",
+    });
+  } catch (error) {
+    res.status(500).json({
+      succeeded: false,
+      error: error.message,
+    });
+  }
+};
+
+export { createUser, loginUser, getDashboardPage, getAUsers, getAllUsers };

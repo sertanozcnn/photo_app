@@ -16,8 +16,8 @@
           <div class="titlepage text_align_left">
             <h2><%= photo.name %></h2>
             <p><%=photo.description.substring(0,80) + "...." %></p>
-            <a class="read_more" href="about.html"
-              >Artist : <%= user.username %></a
+            <a class="read_more" href="/users/<%= photo.user._id %>"
+              >Artist : <%= photo.user.username %></a
             >
           </div>
         </div>
